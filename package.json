@@ -1,0 +1,15 @@
+{
+  "name": "@toshimichi/iseven",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Toshimichi <main@toshimichi.net> (https://toshimichi.net/)",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
