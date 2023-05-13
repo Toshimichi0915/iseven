@@ -1,8 +1,8 @@
 export type PotentiallyEven =
   | string
   | number
-  | (() => number)
-  | (() => Promise<number>);
+  | (() => PotentiallyEven)
+  | (() => Promise<PotentiallyEven>);
 
 export async function isEven(n: PotentiallyEven): Promise<boolean> {
   if (typeof n === "string") {
@@ -13,5 +13,12 @@ export async function isEven(n: PotentiallyEven): Promise<boolean> {
     return await isEven(await n());
   }
 
-  return !isEven(n);
+  if (n > 0) {
+    return !(await isEven(n - 1));
+  } else if (n < 0) {
+    return !(await isEven(n + 1));
+  } else {
+    // n === 0
+    return true;
+  }
 }
